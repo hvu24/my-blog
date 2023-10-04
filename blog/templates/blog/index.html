@@ -4,15 +4,13 @@
 My Blog
 {%endblock%}
 {%block css_files%}
+<link rel="stylesheet" href="{%static "blog/posts.css"%}"/>
 <link rel="stylesheet" href="{%static "blog/index.css"%}"/>
 {%endblock%}
 {%block content%}
-<header id="main-navigation"><h1><a href="">Anthony's Blog</a>
-    <nav><a href="">All Posts</a></nav>
-</h1></header>
 <section id="welcome">
     <header>
-        <img src="" alt="Anthony - The Author Of This Blog"/>
+        <img src="{%static "blog/images/anthony.png"%}" alt="Anthony - The Author Of This Blog"/>
         <h2>Anthony's blog</h2>
     </header>
     <p>Hi, I'm Anthony</p>
@@ -20,17 +18,7 @@ My Blog
 <section id='latest-posts'>
     <h2>My latest thoughts</h2>
     <ul>
-        <li>
-            <article class="post">
-                <a  href="">
-                    <img src="" alt="Mountain Hiking"/>
-                    <div class="post_content">
-                        <h3>Mountain Hiking</h3>
-                        <p>blah blah blah</p>
-                    </div>
-                </a>
-            </article>
-        </li>
+        {%include "blog/includes/post.html"%}
     </ul>
 </section>
 <section id="about">
